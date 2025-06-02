@@ -1,0 +1,386 @@
+/* Floating Chatbot Button */
+.chatbot-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  background-color: #084ed0;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* Submit Button */
+.submit-btn {
+  position: fixed;
+  bottom: 10px;
+  left: 120px;
+  z-index: 999;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  width: 180px;
+  height: 60px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+.chatbot-btn:hover {
+  transform: scale(1.1);
+  background-color: #063bb4;
+}
+
+/* Chatbox Container */
+.chatbox {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  width: 460px;
+  height: 480px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 998;
+}
+
+.chatbox-header {
+  background-color: #084ed0;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chatbox-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background-color: #f4f6f9;
+  scroll-behavior: smooth;
+}
+
+.chatbox-footer {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* زر Therapist */
+.therapist-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.therapist-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.therapist-btn:hover {
+  background-color: #5a6268;
+}
+
+.therapist-btn i {
+  font-size: 14px;
+}
+
+.message-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: #084ed0;
+  box-shadow: 0 0 0 2px rgba(8, 78, 208, 0.2);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* === Message Container === */
+.message-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fb);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.message-container:hover {
+  transform: translateY(-2px);
+}
+
+/* User Message */
+.user-message {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #1a6dff, #084ed0);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 75%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  border: none;
+  direction: rtl;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.message-sender {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Bot Message Container */
+.bot-message {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* === Bot English Message === */
+.bot-english {
+  align-self: flex-start;
+  direction: ltr;
+  background: #e9eeff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #1a1a1a;
+  font-size: 14.5px;
+  line-height: 1.7;
+  max-width: 85%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  position: relative;
+  border-left: 4px solid #084ed0;
+}
+
+/* === Bot Arabic Message === */
+.bot-arabic {
+  align-self: flex-start;
+  direction: rtl;
+  background: #f8f8f8;
+  border-radius: 16px;
+  padding: 18px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 90%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #084ed0;
+  white-space: pre-line;
+  text-align: right;
+  font-family: 'Tajawal', 'Segoe UI', sans-serif;
+}
+
+/* === Bot Message Header === */
+.bot-message-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #084ed0;
+}
+
+/* === Cultural Arabic Message === */
+.cultural-arabic-message {
+  align-self: flex-start;
+  direction: rtl;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 90%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #084ed0;
+  font-family: 'Tajawal', 'Segoe UI', sans-serif;
+}
+
+.cultural-response {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.response-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.flag-emoji {
+  font-size: 24px;
+}
+
+.cultural-greeting {
+  font-size: 18px;
+  font-weight: 700;
+  color: #084ed0;
+}
+
+.main-question {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #084ed0;
+  transition: all 0.3s ease;
+}
+
+.option-item:hover {
+  background-color: #e9eeff;
+  transform: translateX(5px);
+}
+
+.option-icon {
+  font-size: 18px;
+}
+
+.option-text {
+  font-size: 14px;
+}
+
+/* === Classification Label === */
+.classification-label {
+  position: absolute;
+  top: -25px;
+  left: 16px;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: background-color 0.2s ease;
+}
+
+.classification-label.anxiety {
+  background-color: #ffe082;
+  color: #e65100;
+  border-color: #ffb300;
+}
+
+.classification-label.depression {
+  background-color: #ef5350;
+  color: white;
+  border-color: #e53935;
+}
+
+.classification-label.study-tips {
+  background-color: #4caf50;
+  color: white;
+  border-color: #43a047;
+}
+
+.classification-label i {
+  font-size: 14px;
+}
+
+/* === Bot Helpful Links Section === */
+.bot-links {
+  align-self: flex-start;
+  background: #f0f4ff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-top: 8px;
+  border-left: 3px solid #084ed0;
+  max-width: 85%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.bot-links strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #084ed0;
+  font-weight: 600;
+}
+
+.bot-links a {
+  color: #084ed0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bot-links a:hover {
+  color: #063bb4;
+  text-decoration: underline;
+}

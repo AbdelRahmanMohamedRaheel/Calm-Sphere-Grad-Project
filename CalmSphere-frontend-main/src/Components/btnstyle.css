@@ -1,0 +1,8 @@
+button:hover{
+    border-color: #646cff;
+}
+
+button.selected{
+    background-color:white;
+    color: black;
+}

@@ -42,8 +42,8 @@ const predictMentalHealthCondition = async (prompt) => {
   Based on this message, classify the user's condition into one of the following categories: 
   - Anxiety 
   - Depression 
-  - Study Tips
-  Provide only the classification result as a string (e.g., "Anxiety", "Depression", "Study Tips").`;
+  - Normal
+  Provide only the classification result as a string (e.g., "Anxiety", "Depression", "Normal").`;
 
   const model = genAI.getGenerativeModel({ model: "models/gemini-2.0-flash" });
 
@@ -61,7 +61,7 @@ const predictMentalHealthCondition = async (prompt) => {
   });
 
   const response = await result.response;
-  return response.text().trim();  // Return the classification (Anxiety, Depression, or Study Tips)
+  return response.text().trim();  // Return the classification
 };
 // Generate dynamic conversation
 const generateDynamicConversation = async (condition, prompt) => {
